@@ -1,0 +1,107 @@
+@import "../omarchy/current/theme/waybar.css";
+
+/* Reset and Global Styles */
+* {   /* <--- Added the '*' here to fix the error */
+  background-color: transparent;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 12px;
+}
+
+/* The Main Bar Container */
+window#waybar {
+  background-image: repeating-linear-gradient(
+    45deg,
+    alpha(@foreground, 0.1),
+    alpha(@foreground, 0.1) 1px,
+    transparent 2px,
+    transparent 10px
+  );
+  background-color: @background; 
+  
+  /* This removes the outer horizontal end-caps */
+  border-top: 1px solid @foreground;
+  border-bottom: 1px solid @foreground;
+  border-left: none;  
+  border-right: none; 
+
+  margin-top: 8px; 
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Module Group Styling */
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: @background;
+  border: 1px solid @foreground;
+}
+
+/* Vertical Dividers and Gaps */
+.modules-left {
+  margin-left: 10px;
+  padding: 0 8px;
+}
+
+.modules-center {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0 15px;
+}
+
+.modules-right {
+  margin-right: 10px;
+  padding: 0 8px;
+}
+
+/* --- Your Original Module Styles --- */
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#cpu, #battery, #pulseaudio, #custom-omarchy,
+#custom-screenrecording-indicator, #custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#tray { margin-right: 16px; }
+#bluetooth { margin-right: 17px; }
+#network { margin-right: 13px; }
+#custom-expand-icon { margin-right: 18px; }
+
+tooltip {
+  padding: 2px;
+  background-color: @background;
+  border: 1px solid @foreground;
+}
+
+#custom-update { font-size: 10px; }
+#clock { margin-left: 8.75px; }
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 5px;
+  font-size: 10px;
+  padding-bottom: 1px;
+}
+
+#custom-screenrecording-indicator.active { color: #a55555; }
+#custom-voxtype { min-width: 12px; margin: 0 0 0 7.5px; }
+#custom-voxtype.recording { color: #a55555; }
+
+#custom-nightlight {
+  padding: 0 8px;
+  font-size: 15px;
+}
