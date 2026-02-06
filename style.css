@@ -84,7 +84,7 @@ window#waybar {
 #tray { margin-right: 16px; }
 #bluetooth { margin-right: 17px; }
 #network { margin-right: 13px; }
-#custom-expand-icon { margin-right: 18px; }
+/* #custom-expand-icon { margin-right: 18px; } */
 
 tooltip {
   padding: 2px;
@@ -121,7 +121,7 @@ tooltip {
 #custom-timer {
   padding: 0 6px;
   font-size: 12px;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease; 
 }
 
 /* Disabled / Idle */
