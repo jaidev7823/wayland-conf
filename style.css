@@ -1,7 +1,8 @@
+
 @import "../omarchy/current/theme/waybar.css";
 
 /* Reset and Global Styles */
-* {   /* <--- Added the '*' here to fix the error */
+* {
   background-color: transparent;
   color: @foreground;
   border: none;
@@ -20,15 +21,14 @@ window#waybar {
     transparent 2px,
     transparent 10px
   );
-  background-color: @background; 
-  
-  /* This removes the outer horizontal end-caps */
+  background-color: @background;
+
   border-top: 1px solid @foreground;
   border-bottom: 1px solid @foreground;
-  border-left: none;  
-  border-right: none; 
+  border-left: none;
+  border-right: none;
 
-  margin-top: 8px; 
+  margin-top: 8px;
   margin-left: 0;
   margin-right: 0;
 }
@@ -58,7 +58,7 @@ window#waybar {
   padding: 0 8px;
 }
 
-/* --- Your Original Module Styles --- */
+/* --- Module Styles --- */
 #workspaces button {
   all: initial;
   padding: 0 6px;
@@ -70,8 +70,13 @@ window#waybar {
   opacity: 0.5;
 }
 
-#cpu, #battery, #pulseaudio, #custom-omarchy,
-#custom-screenrecording-indicator, #custom-update {
+#cpu,
+#battery,
+#pulseaudio,
+#custom-omarchy,
+#custom-screenrecording-indicator,
+#custom-update,
+#custom-timer {
   min-width: 12px;
   margin: 0 7.5px;
 }
@@ -91,17 +96,91 @@ tooltip {
 #clock { margin-left: 8.75px; }
 
 #custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 5px;
   font-size: 10px;
   padding-bottom: 1px;
 }
 
 #custom-screenrecording-indicator.active { color: #a55555; }
-#custom-voxtype { min-width: 12px; margin: 0 0 0 7.5px; }
+
+#custom-voxtype {
+  min-width: 12px;
+  margin-left: 7.5px;
+}
+
 #custom-voxtype.recording { color: #a55555; }
 
 #custom-nightlight {
   padding: 0 8px;
   font-size: 15px;
+}
+
+/* -----------------------------------------------------------------------------
+ * WAYBAR TIMER (NORMALIZED)
+ * ----------------------------------------------------------------------------- */
+
+#custom-timer {
+  padding: 0 6px;
+  font-size: 12px;
+  transition: color 0.2s ease;
+}
+
+/* Disabled / Idle */
+#custom-timer.disabled,
+#custom-timer.idle {
+  color: #bfbfbf;
+  opacity: 0.6;
+}
+
+/* Selection Mode */
+#custom-timer.select {
+  color: #85b2fa;
+}
+
+/* Running / Pomodoro Work */
+#custom-timer.running {
+  color: #cccccc;
+}
+
+/* Pomodoro Break */
+#custom-timer.pomo_break {
+  color: #f9e2af;
+}
+
+/* Pomodoro Message (Work 1/4) */
+#custom-timer.pomo_msg {
+  color: #cba6f7;
+}
+
+/* Paused */
+#custom-timer.paused {
+  color: #f9e2af;
+}
+
+/* Warning */
+#custom-timer.warning {
+  animation: red-alert 1s ease-in-out infinite alternate;
+}
+
+/* Done */
+#custom-timer.done {
+  color: #11111b;
+}
+
+/* Reset */
+#custom-timer.reset {
+  color: #ff4d4d;
+}
+
+/* -----------------------------------------------------------------------------
+ * KEYFRAMES
+ * ----------------------------------------------------------------------------- */
+@keyframes red-alert {
+  0% {
+    color: #ff4d4d;
+    opacity: 1;
+  }
+  100% {
+    color: #ff4d4d;
+    opacity: 0.8;
+  }
 }
