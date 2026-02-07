@@ -6,7 +6,8 @@
   "height": 26,
   "modules-left": [
     "custom/omarchy",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "custom/todo"
   ],
   "modules-center": [
     "clock",
@@ -16,7 +17,6 @@
   ],
   "modules-right": [
     // "group/tray-expander",
-    "custom/todo",
     "custom/timer",
     "bluetooth",
     "network",

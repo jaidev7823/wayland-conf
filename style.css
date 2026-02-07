@@ -186,6 +186,6 @@ tooltip {
 }
 
 #custom-todo {
-  border-right: 1px solid @border-color;
-  padding-right: 8px;
+  border-left: 1px solid @border-color;
+  padding-left: 8px;
 }
