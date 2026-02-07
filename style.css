@@ -184,3 +184,8 @@ tooltip {
     opacity: 0.8;
   }
 }
+
+#custom-todo {
+  border-right: 1px solid @border-color;
+  padding-right: 8px;
+}
