@@ -17,6 +17,7 @@
   ],
   "modules-right": [
     // "group/tray-expander",
+    "hyprland/window",
     "custom/timer",
     "bluetooth",
     "network",
@@ -232,4 +233,13 @@
     "on-click-middle": "$HOME/.config/waybar/todo-scripts/todo.py reset --signal 13",
     "tooltip": true
   },
+  "hyprland/window": {
+    "format": "{}", // Can also use "{title}"
+    "max-length": 50,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "🌎 $1",
+      "(.*) - zsh": "> [$1]"
+    }
+  }
 }

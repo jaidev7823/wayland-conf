@@ -122,6 +122,8 @@ tooltip {
   padding: 0 6px;
   font-size: 12px;
   transition: color 0.2s ease; 
+  border-right: 1px solid @border-color;
+  padding: 0px 8px 0 8px;
 }
 
 /* Disabled / Idle */
@@ -188,4 +190,9 @@ tooltip {
 #custom-todo {
   border-left: 1px solid @border-color;
   padding-left: 8px;
+}
+
+#window {
+  border-right: 1px solid @border-color;
+  padding-right: 8px;
 }
