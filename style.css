@@ -5,7 +5,7 @@
 * {
   background-color: transparent;
   color: @foreground;
-  border: none;
+  border-width: 0;
   border-radius: 0;
   min-height: 0;
   font-family: 'JetBrainsMono Nerd Font';
@@ -23,8 +23,8 @@ window#waybar {
   );
   background-color: @background;
 
-  border-top: 1px solid @foreground;
-  border-bottom: 1px solid @foreground;
+  border-top: 1px solid @border-color;
+  border-bottom: 1px solid @border-color;
   border-left: none;
   border-right: none;
 
@@ -38,7 +38,7 @@ window#waybar {
 .modules-center,
 .modules-right {
   background-color: @background;
-  border: 1px solid @foreground;
+  border: 1px solid @border-color;
 }
 
 /* Vertical Dividers and Gaps */
@@ -89,7 +89,7 @@ window#waybar {
 tooltip {
   padding: 2px;
   background-color: @background;
-  border: 1px solid @foreground;
+  border: 1px solid @border-color;
 }
 
 #custom-update { font-size: 10px; }
@@ -127,7 +127,7 @@ tooltip {
 /* Disabled / Idle */
 #custom-timer.disabled,
 #custom-timer.idle {
-  color: #bfbfbf;
+  color: @foreground;
   opacity: 0.6;
 }
 
@@ -138,7 +138,7 @@ tooltip {
 
 /* Running / Pomodoro Work */
 #custom-timer.running {
-  color: #cccccc;
+  color: @foreground;;
 }
 
 /* Pomodoro Break */
